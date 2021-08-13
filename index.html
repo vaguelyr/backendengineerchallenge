@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+	fetch("/api/supervisors").then(function(response) {
+		response.text().then(function(text) {
+		document.getElementById("supervisors").innerHTML = text;
+		});
+	});
+  </script>
+
+  <div id="supervisors" > please wait </div>
+
+<br> <br>
+
+<form action="/api/submit" method="POST">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="firstName"><br><br>
+
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lastName"><br><br>
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="email"><br><br>
+
+  <label for="phone">Phone:</label>
+  <input type="text" id="phone" name="phone"><br><br>
+
+  <label for="superv">Supervisor:</label>
+  <input type="text" id="superv" name="superv"><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
